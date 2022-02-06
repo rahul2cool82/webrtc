@@ -152,5 +152,5 @@ async function joinRoom() {
 async function createRoom() {
     const roomId = getRandom();
     firebase.database().ref(`room${roomId}/users`).set('');
-    window.location.replace(window.location.origin + '?roomId='+roomId);
+    window.location.replace(window.location.href + '?roomId='+roomId);
 }
