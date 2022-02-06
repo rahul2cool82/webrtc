@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const link = window.location.href;
+        const url = new URL(link);
+        const roomId = url.searchParams.get('roomId'); 
+        var firebaseConfig;
+    </script>
+    
+</head>
+<body>
+    <button id="create" onclick="createRoom()">Create Room</button>
+    <button id="join" onclick="joinRoom()">Join Room</button>
+    
+    <div id="videos">
+        <video id="localVideo" autoplay playsinline muted ></video>
+    </div>
+    <div id="audios">
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.15.5/firebase.js" integrity="sha512-ClrrTXRDRy/18UWG1FSQZ2tRaIeH7G5WVCbtoFFtC2sY2A00JHhSAotCu6jZ+zxtnL88hPZWfOdQZz9tGDhVaA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        firebaseConfig = {
+          apiKey: "AIzaSyAkxddDFMZgUAr9Zdcq1eTqOVsXH5P80p4",
+          authDomain: "mobidoc-demo.firebaseapp.com",
+          databaseURL: "https://mobidoc-demo-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "mobidoc-demo",
+          storageBucket: "mobidoc-demo.appspot.com",
+          messagingSenderId: "949072441321",
+          appId: "1:949072441321:web:872792a73ef08160056578",
+          measurementId: "G-ZG98LK1SZ8"
+        };
+        firebase.initializeApp(firebaseConfig);
+      
+        
+      </script>
+</body>
+<script src="webrtc.js"></script>
+</html>
