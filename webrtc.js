@@ -123,7 +123,7 @@ async function createAnswer(clientId = 'demo') {
 
 async function joinRoom() {
     firebase.database().ref(`room${roomId}/users/${userId}`).set({online: true});
-    firebase.database().ref(`room${roomId}/users/${userId}`).onDisconnect().set({online: false});
+    //firebase.database().ref(`room${roomId}/users/${userId}`).onDisconnect().set({online: false});
     firebase.database().ref(`room${roomId}/users`).on('value', function(snapshot){
         const values = snapshot.val();
         for(const id in values){
